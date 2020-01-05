@@ -1,0 +1,9 @@
+#!/bin/sh
+IFS='
+'
+for file in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+do
+destination="${file%.*}_192kbps.mp3"
+ffmpeg -i $file -codec:a libmp3lame -b:a 192k $destination
+done
+notify-send --urgency=low -i totem "Conversion Completed"

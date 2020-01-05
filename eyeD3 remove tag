@@ -5,4 +5,4 @@ for file in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
 do
 eyeD3 --remove-all-comments -n "0" --publisher=0 --user-url-frame : $file
 done
-notify-send --urgency=low -i totem "Conversion Terminée"
+notify-send --urgency=low -i totem "Conversion Completed"

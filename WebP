@@ -1,0 +1,10 @@
+#!/bin/sh
+# installé webp & gthumb au préalable
+IFS='
+'
+for file in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+do
+destination="${file%.*}.webp"
+cwebp -q 90 $file -o $destination
+done
+notify-send --urgency=low -i totem "Conversion Completed"

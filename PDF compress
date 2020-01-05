@@ -1,0 +1,9 @@
+#!/bin/sh
+IFS='
+'
+for file in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+do
+destination="${file%.*}++.pdf"
+gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile="$destination"  "$file"
+done
+notify-send --urgency=low -i totem "Conversion Completed"

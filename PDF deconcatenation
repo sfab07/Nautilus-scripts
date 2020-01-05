@@ -1,0 +1,12 @@
+#!/bin/sh
+IFS='
+'
+mkdir -p ~/Documents/pdf-temp/
+for file in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+do
+cp $file ~/Documents/pdf-temp/
+cd ~/Documents/pdf-temp/
+pdftk $file burst
+sleep 1
+done
+notify-send --urgency=low -i totem "Deconcatenation Completed"

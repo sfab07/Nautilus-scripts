@@ -3,6 +3,8 @@
 pdf / audio / video file conversion and processing
 
 Requirements :
+Pdftk :
+sudo apt install -y pdftk
 
 WebP :
 sudo apt-get install -y webp gthumb

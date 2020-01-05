@@ -1,0 +1,9 @@
+#!/bin/sh
+IFS='
+'
+for file in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
+do
+destination="${file%.*}_X265.mkv"
+ffmpeg -i $file -c:v libx265 -vf scale=1920:804 -preset medium -x265-params crf=23 -c:a libopus -ac 2 -clev 3dB -slev -6dB $destination
+done
+notify-send --urgency=low -i totem "Conversion Completed"

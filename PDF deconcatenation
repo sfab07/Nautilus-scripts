@@ -1,12 +1,13 @@
 #!/bin/sh
 IFS='
 '
+# Création répertoire
 mkdir -p ~/Documents/pdf-temp/
 for file in $NAUTILUS_SCRIPT_SELECTED_FILE_PATHS
 do
-cp $file ~/Documents/pdf-temp/
 cd ~/Documents/pdf-temp/
 pdftk $file burst
 sleep 1
+rm doc_data.txt
 done
-notify-send --urgency=low -i totem "Deconcatenation Completed"
+notify-send --urgency=low -i totem "Deconcatenation completed"

@@ -2,6 +2,11 @@
 
 pdf / audio / video file conversion and processing
 
+Todo :
+- move each, files to this location : .local/share/nautilus/scripts/
+- manually modify the script icons. Example circle-blue.png:WebP ; circle-red.png:PDF ; circle-orange.png:MP3 ; circle-purple.png:Video
+- make executable via terminal : chmod-R a+x ~/.local/share/nautilus/scripts/
+
 Requirements :
 
 Pdftk :
